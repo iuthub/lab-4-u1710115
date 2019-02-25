@@ -15,8 +15,31 @@
 
 
 		<div id="listarea">
+
 			<ul id="musiclist">
-				<li class="mp3item">
+			
+				
+			<?php 
+				$dir = glob("songs/*.mp3");
+				print_r($dir);
+    			$files = scandir("songs");
+    			
+    			for ($i=2; $i <count($files) ; $i++) { 
+    				
+		    	 	echo "<li class='mp3item'>";
+		    	 	echo "<a download=".$files[$i]." href='songs/<?php echo $files[$i] ?>'>".$files[$i] ."</a><br>";	
+		    	 	echo "</li>";
+
+    			 }
+
+			?> 
+ 
+
+
+
+
+
+			<!-- 	<li class="mp3item">
 					<a href="songs/Be More.mp3">Be More.mp3</a>
 					(5438375 b)
 				</li>
@@ -43,8 +66,9 @@
 
 				<li class="playlistitem">
 					<a href="music.php?playlist=playlist.txt">playlist.txt</a>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 	</body>
 </html>
+
